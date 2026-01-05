@@ -1,0 +1,251 @@
+sourceId,date,category,amount,status,description
+INV-2025-001,11-10-2025,Servicios,1.666,cancelado,Prestación de servicio
+INV-2025-002,03-01-2025,Inventario,680,activo,Compra de stock
+INV-2025-003,24-07-2025,Gastos,1.974,activo,Pago de gasto operativo
+INV-2025-004,09-09-2025,Servicios,339,pendiente,Prestación de servicio
+INV-2025-005,21-03-2025,Gastos,4.542,cancelado,Pago de gasto operativo
+INV-2025-006,13-04-2025,Inventario,4.287,completado,Compra de stock
+INV-2025-007,19-10-2025,Inventario,422,activo,Compra de stock
+INV-2025-008,24-11-2025,Ventas,1.928,activo,Venta de producto comercial
+INV-2025-009,10-08-2025,Servicios,3.033,pendiente,Prestación de servicio
+INV-2025-010,21-01-2025,Ventas,4.533,activo,Venta de producto comercial
+INV-2025-011,30-07-2025,Ventas,489,completado,Venta de producto comercial
+INV-2025-012,24-07-2025,Servicios,693,activo,Prestación de servicio
+INV-2025-013,03-04-2025,Servicios,2.196,pendiente,Prestación de servicio
+INV-2025-014,13-09-2025,Inventario,1.297,completado,Compra de stock
+INV-2025-015,21-02-2025,Servicios,1.438,pendiente,Prestación de servicio
+INV-2025-016,23-07-2025,Servicios,1.489,cancelado,Prestación de servicio
+INV-2025-017,05-01-2025,Gastos,2.831,activo,Pago de gasto operativo
+INV-2025-018,16-02-2025,Inventario,1.243,completado,Compra de stock
+INV-2025-019,01-05-2025,Inventario,591,pendiente,Compra de stock
+INV-2025-020,25-05-2025,Servicios,377,pendiente,Prestación de servicio
+INV-2025-021,13-07-2025,Servicios,4.333,activo,Prestación de servicio
+INV-2025-022,06-09-2025,Gastos,1.694,pendiente,Pago de gasto operativo
+INV-2025-023,24-03-2025,Ventas,2.147,cancelado,Venta de producto comercial
+INV-2025-024,15-05-2025,Ventas,3.669,completado,Venta de producto comercial
+INV-2025-025,28-11-2025,Inventario,4.002,activo,Compra de stock
+INV-2025-026,16-02-2025,Inventario,2.665,pendiente,Compra de stock
+INV-2025-027,10-10-2025,Inventario,4.571,pendiente,Compra de stock
+INV-2025-028,16-08-2025,Gastos,2.053,activo,Pago de gasto operativo
+INV-2025-029,28-06-2025,Servicios,1.951,cancelado,Prestación de servicio
+INV-2025-030,14-09-2025,Inventario,2.953,completado,Compra de stock
+INV-2025-031,10-09-2025,Inventario,3.782,activo,Compra de stock
+INV-2025-032,29-01-2025,Inventario,1.396,activo,Compra de stock
+INV-2025-033,05-03-2025,Servicios,1.295,activo,Prestación de servicio
+INV-2025-034,14-06-2025,Gastos,3.604,activo,Pago de gasto operativo
+INV-2025-035,14-08-2025,Gastos,4.939,completado,Pago de gasto operativo
+INV-2025-036,22-10-2025,Ventas,1.824,pendiente,Venta de producto comercial
+INV-2025-037,01-09-2025,Inventario,1.760,activo,Compra de stock
+INV-2025-038,28-07-2025,Inventario,412,activo,Compra de stock
+INV-2025-039,17-11-2025,Gastos,3.264,pendiente,Pago de gasto operativo
+INV-2025-040,24-07-2025,Gastos,3.309,cancelado,Pago de gasto operativo
+INV-2025-041,05-03-2025,Inventario,3.253,completado,Compra de stock
+INV-2025-042,17-10-2025,Inventario,1.767,completado,Compra de stock
+INV-2025-043,09-08-2025,Inventario,851,cancelado,Compra de stock
+INV-2025-044,11-05-2025,Servicios,2.389,completado,Prestación de servicio
+INV-2025-045,08-03-2025,Inventario,1.939,pendiente,Compra de stock
+INV-2025-046,09-10-2025,Servicios,3.137,pendiente,Prestación de servicio
+INV-2025-047,12-11-2025,Gastos,2.512,activo,Pago de gasto operativo
+INV-2025-048,08-03-2025,Inventario,3.309,pendiente,Compra de stock
+INV-2025-049,11-03-2025,Gastos,266,cancelado,Pago de gasto operativo
+INV-2025-050,27-06-2025,Inventario,3.859,cancelado,Compra de stock
+INV-2025-051,21-01-2025,Gastos,1.181,activo,Pago de gasto operativo
+INV-2025-052,05-07-2025,Gastos,3.269,pendiente,Pago de gasto operativo
+INV-2025-053,04-01-2025,Servicios,724,completado,Prestación de servicio
+INV-2025-054,02-10-2025,Inventario,2.800,completado,Compra de stock
+INV-2025-055,27-01-2025,Ventas,1.329,cancelado,Venta de producto comercial
+INV-2025-056,07-07-2025,Gastos,2.680,cancelado,Pago de gasto operativo
+INV-2025-057,22-03-2025,Inventario,4.795,pendiente,Compra de stock
+INV-2025-058,28-11-2025,Inventario,3.845,cancelado,Compra de stock
+INV-2025-059,20-03-2025,Ventas,2.862,activo,Venta de producto comercial
+INV-2025-060,16-01-2025,Servicios,4.738,cancelado,Prestación de servicio
+INV-2025-061,12-04-2025,Ventas,1.030,pendiente,Venta de producto comercial
+INV-2025-062,10-11-2025,Gastos,4.890,pendiente,Pago de gasto operativo
+INV-2025-063,20-06-2025,Gastos,615,completado,Pago de gasto operativo
+INV-2025-064,15-05-2025,Ventas,2.603,cancelado,Venta de producto comercial
+INV-2025-065,28-01-2025,Ventas,3.254,activo,Venta de producto comercial
+INV-2025-066,08-08-2025,Inventario,3.386,cancelado,Compra de stock
+INV-2025-067,18-06-2025,Ventas,1.286,completado,Venta de producto comercial
+INV-2025-068,10-10-2025,Ventas,1.345,activo,Venta de producto comercial
+INV-2025-069,10-05-2025,Gastos,1.184,cancelado,Pago de gasto operativo
+INV-2025-070,16-05-2025,Ventas,895,pendiente,Venta de producto comercial
+INV-2025-071,27-03-2025,Gastos,1.982,activo,Pago de gasto operativo
+INV-2025-072,04-06-2025,Servicios,168,cancelado,Prestación de servicio
+INV-2025-073,12-11-2025,Gastos,4.762,cancelado,Pago de gasto operativo
+INV-2025-074,28-11-2025,Gastos,1.447,activo,Pago de gasto operativo
+INV-2025-075,03-01-2025,Ventas,1.034,activo,Venta de producto comercial
+INV-2025-076,06-11-2025,Servicios,4.498,pendiente,Prestación de servicio
+INV-2025-077,18-04-2025,Servicios,4.955,pendiente,Prestación de servicio
+INV-2025-078,27-05-2025,Ventas,2.505,pendiente,Venta de producto comercial
+INV-2025-079,19-10-2025,Gastos,1.647,pendiente,Pago de gasto operativo
+INV-2025-080,26-10-2025,Inventario,1.000,cancelado,Compra de stock
+INV-2025-081,02-05-2025,Servicios,1.278,cancelado,Prestación de servicio
+INV-2025-082,21-06-2025,Ventas,1.193,completado,Venta de producto comercial
+INV-2025-083,18-07-2025,Ventas,2.595,cancelado,Venta de producto comercial
+INV-2025-084,21-05-2025,Servicios,2.905,pendiente,Prestación de servicio
+INV-2025-085,02-06-2025,Servicios,2.092,activo,Prestación de servicio
+INV-2025-086,02-01-2025,Gastos,4.007,cancelado,Pago de gasto operativo
+INV-2025-087,23-07-2025,Servicios,3.159,cancelado,Prestación de servicio
+INV-2025-088,03-06-2025,Inventario,738,completado,Compra de stock
+INV-2025-089,09-08-2025,Servicios,3.832,cancelado,Prestación de servicio
+INV-2025-090,03-06-2025,Gastos,4.632,pendiente,Pago de gasto operativo
+INV-2025-091,23-09-2025,Ventas,1.478,cancelado,Venta de producto comercial
+INV-2025-092,02-04-2025,Servicios,4.263,activo,Prestación de servicio
+INV-2025-093,29-04-2025,Ventas,352,pendiente,Venta de producto comercial
+INV-2025-094,10-06-2025,Ventas,1.716,activo,Venta de producto comercial
+INV-2025-095,22-11-2025,Gastos,757,activo,Pago de gasto operativo
+INV-2025-096,30-09-2025,Inventario,4.441,pendiente,Compra de stock
+INV-2025-097,15-10-2025,Gastos,4.568,pendiente,Pago de gasto operativo
+INV-2025-098,29-04-2025,Gastos,984,completado,Pago de gasto operativo
+INV-2025-099,26-04-2025,Ventas,4.370,completado,Venta de producto comercial
+INV-2025-100,13-09-2025,Ventas,367,activo,Venta de producto comercial
+INV-2025-101,19-07-2025,Ventas,2.567,cancelado,Venta de producto comercial
+INV-2025-102,30-07-2025,Gastos,2.885,completado,Pago de gasto operativo
+INV-2025-103,19-02-2025,Inventario,3.068,pendiente,Compra de stock
+INV-2025-104,11-02-2025,Gastos,3.465,completado,Pago de gasto operativo
+INV-2025-105,08-11-2025,Ventas,1.440,pendiente,Venta de producto comercial
+INV-2025-106,09-05-2025,Ventas,3.020,pendiente,Venta de producto comercial
+INV-2025-107,06-02-2025,Servicios,3.974,pendiente,Prestación de servicio
+INV-2025-108,25-09-2025,Ventas,2.158,completado,Venta de producto comercial
+INV-2025-109,16-04-2025,Gastos,319,cancelado,Pago de gasto operativo
+INV-2025-110,10-09-2025,Servicios,2.082,activo,Prestación de servicio
+INV-2025-111,03-01-2025,Inventario,4.498,pendiente,Compra de stock
+INV-2025-112,09-08-2025,Ventas,3.396,activo,Venta de producto comercial
+INV-2025-113,06-10-2025,Ventas,292,activo,Venta de producto comercial
+INV-2025-114,04-02-2025,Ventas,4.641,completado,Venta de producto comercial
+INV-2025-115,15-01-2025,Servicios,2.213,completado,Prestación de servicio
+INV-2025-116,07-09-2025,Inventario,1.413,completado,Compra de stock
+INV-2025-117,08-09-2025,Inventario,854,pendiente,Compra de stock
+INV-2025-118,03-10-2025,Inventario,3.548,pendiente,Compra de stock
+INV-2025-119,07-05-2025,Inventario,3.529,activo,Compra de stock
+INV-2025-120,17-03-2025,Gastos,2.462,cancelado,Pago de gasto operativo
+INV-2025-121,30-07-2025,Gastos,2.044,activo,Pago de gasto operativo
+INV-2025-122,31-10-2025,Inventario,4.384,activo,Compra de stock
+INV-2025-123,19-10-2025,Ventas,2.913,completado,Venta de producto comercial
+INV-2025-124,18-05-2025,Gastos,3.404,pendiente,Pago de gasto operativo
+INV-2025-125,09-10-2025,Servicios,2.886,cancelado,Prestación de servicio
+INV-2025-126,24-01-2025,Ventas,1.164,pendiente,Venta de producto comercial
+INV-2025-127,28-01-2025,Ventas,2.086,completado,Venta de producto comercial
+INV-2025-128,01-07-2025,Servicios,2.090,cancelado,Prestación de servicio
+INV-2025-129,29-08-2025,Inventario,4.185,cancelado,Compra de stock
+INV-2025-130,25-04-2025,Inventario,3.914,cancelado,Compra de stock
+INV-2025-131,29-08-2025,Ventas,4.828,activo,Venta de producto comercial
+INV-2025-132,07-04-2025,Servicios,2.202,activo,Prestación de servicio
+INV-2025-133,23-06-2025,Ventas,2.968,activo,Venta de producto comercial
+INV-2025-134,18-04-2025,Servicios,1.751,cancelado,Prestación de servicio
+INV-2025-135,09-07-2025,Ventas,4.495,cancelado,Venta de producto comercial
+INV-2025-136,17-11-2025,Gastos,2.707,cancelado,Pago de gasto operativo
+INV-2025-137,26-04-2025,Servicios,403,completado,Prestación de servicio
+INV-2025-138,13-09-2025,Inventario,2.033,cancelado,Compra de stock
+INV-2025-139,28-10-2025,Servicios,3.263,cancelado,Prestación de servicio
+INV-2025-140,09-01-2025,Gastos,2.829,activo,Pago de gasto operativo
+INV-2025-141,12-08-2025,Servicios,4.565,activo,Prestación de servicio
+INV-2025-142,05-04-2025,Servicios,4.476,cancelado,Prestación de servicio
+INV-2025-143,24-09-2025,Servicios,107,activo,Prestación de servicio
+INV-2025-144,28-08-2025,Servicios,2.412,cancelado,Prestación de servicio
+INV-2025-145,26-07-2025,Inventario,1.584,activo,Compra de stock
+INV-2025-146,29-01-2025,Gastos,1.084,completado,Pago de gasto operativo
+INV-2025-147,01-07-2025,Ventas,2.313,activo,Venta de producto comercial
+INV-2025-148,02-09-2025,Gastos,4.057,pendiente,Pago de gasto operativo
+INV-2025-149,07-08-2025,Ventas,2.880,cancelado,Venta de producto comercial
+INV-2025-150,15-08-2025,Ventas,1.509,completado,Venta de producto comercial
+INV-2025-151,23-02-2025,Servicios,134,activo,Prestación de servicio
+INV-2025-152,11-07-2025,Inventario,4.370,pendiente,Compra de stock
+INV-2025-153,18-08-2025,Inventario,2.578,pendiente,Compra de stock
+INV-2025-154,01-05-2025,Gastos,4.723,completado,Pago de gasto operativo
+INV-2025-155,13-07-2025,Servicios,4.469,cancelado,Prestación de servicio
+INV-2025-156,25-02-2025,Ventas,2.218,pendiente,Venta de producto comercial
+INV-2025-157,01-01-2025,Ventas,1.106,pendiente,Venta de producto comercial
+INV-2025-158,27-06-2025,Gastos,1.828,cancelado,Pago de gasto operativo
+INV-2025-159,23-02-2025,Ventas,1.293,completado,Venta de producto comercial
+INV-2025-160,02-07-2025,Gastos,2.714,completado,Pago de gasto operativo
+INV-2025-161,23-09-2025,Servicios,3.540,completado,Prestación de servicio
+INV-2025-162,04-04-2025,Servicios,3.082,completado,Prestación de servicio
+INV-2025-163,17-10-2025,Ventas,3.261,pendiente,Venta de producto comercial
+INV-2025-164,27-08-2025,Gastos,4.015,completado,Pago de gasto operativo
+INV-2025-165,10-04-2025,Gastos,3.836,activo,Pago de gasto operativo
+INV-2025-166,09-09-2025,Inventario,1.917,completado,Compra de stock
+INV-2025-167,21-08-2025,Gastos,1.689,completado,Pago de gasto operativo
+INV-2025-168,22-07-2025,Servicios,4.650,completado,Prestación de servicio
+INV-2025-169,21-11-2025,Inventario,1.213,activo,Compra de stock
+INV-2025-170,15-08-2025,Inventario,1.706,cancelado,Compra de stock
+INV-2025-171,18-11-2025,Ventas,3.216,activo,Venta de producto comercial
+INV-2025-172,15-11-2025,Inventario,1.609,pendiente,Compra de stock
+INV-2025-173,11-11-2025,Gastos,3.920,pendiente,Pago de gasto operativo
+INV-2025-174,21-10-2025,Ventas,3.376,activo,Venta de producto comercial
+INV-2025-175,05-01-2025,Gastos,4.128,cancelado,Pago de gasto operativo
+INV-2025-176,09-08-2025,Inventario,929,activo,Compra de stock
+INV-2025-177,23-03-2025,Ventas,3.820,pendiente,Venta de producto comercial
+INV-2025-178,01-04-2025,Servicios,3.915,pendiente,Prestación de servicio
+INV-2025-179,04-11-2025,Gastos,3.495,pendiente,Pago de gasto operativo
+INV-2025-180,22-04-2025,Servicios,1.905,completado,Prestación de servicio
+INV-2025-181,22-02-2025,Inventario,4.302,completado,Compra de stock
+INV-2025-182,03-03-2025,Gastos,4.480,activo,Pago de gasto operativo
+INV-2025-183,14-04-2025,Servicios,3.166,cancelado,Prestación de servicio
+INV-2025-184,14-02-2025,Ventas,2.172,cancelado,Venta de producto comercial
+INV-2025-185,07-10-2025,Inventario,1.746,cancelado,Compra de stock
+INV-2025-186,27-04-2025,Gastos,4.867,cancelado,Pago de gasto operativo
+INV-2025-187,03-05-2025,Inventario,4.902,completado,Compra de stock
+INV-2025-188,16-08-2025,Gastos,4.803,completado,Pago de gasto operativo
+INV-2025-189,06-05-2025,Inventario,1.679,cancelado,Compra de stock
+INV-2025-190,14-09-2025,Servicios,1.078,activo,Prestación de servicio
+INV-2025-191,30-01-2025,Gastos,4.236,cancelado,Pago de gasto operativo
+INV-2025-192,06-02-2025,Inventario,3.573,completado,Compra de stock
+INV-2025-193,13-04-2025,Gastos,1.214,completado,Pago de gasto operativo
+INV-2025-194,26-04-2025,Servicios,1.603,cancelado,Prestación de servicio
+INV-2025-195,27-04-2025,Servicios,3.901,pendiente,Prestación de servicio
+INV-2025-196,09-03-2025,Inventario,4.877,pendiente,Compra de stock
+INV-2025-197,06-01-2025,Servicios,2.093,activo,Prestación de servicio
+INV-2025-198,01-08-2025,Ventas,3.073,activo,Venta de producto comercial
+INV-2025-199,20-04-2025,Gastos,2.139,activo,Pago de gasto operativo
+INV-2025-200,17-10-2025,Servicios,3.643,cancelado,Prestación de servicio
+INV-2025-201,26-01-2025,Gastos,3.944,completado,Pago de gasto operativo
+INV-2025-202,26-05-2025,Servicios,3.699,completado,Prestación de servicio
+INV-2025-203,17-09-2025,Ventas,4.588,pendiente,Venta de producto comercial
+INV-2025-204,28-02-2025,Servicios,483,cancelado,Prestación de servicio
+INV-2025-205,25-10-2025,Inventario,1.744,cancelado,Compra de stock
+INV-2025-206,12-01-2025,Ventas,4.854,completado,Venta de producto comercial
+INV-2025-207,30-08-2025,Ventas,4.950,cancelado,Venta de producto comercial
+INV-2025-208,22-06-2025,Gastos,804,pendiente,Pago de gasto operativo
+INV-2025-209,04-06-2025,Inventario,805,cancelado,Compra de stock
+INV-2025-210,21-01-2025,Gastos,4.216,activo,Pago de gasto operativo
+INV-2025-211,01-10-2025,Ventas,4.427,completado,Venta de producto comercial
+INV-2025-212,28-09-2025,Gastos,1.536,activo,Pago de gasto operativo
+INV-2025-213,08-05-2025,Servicios,3.318,cancelado,Prestación de servicio
+INV-2025-214,04-06-2025,Servicios,2.843,cancelado,Prestación de servicio
+INV-2025-215,11-01-2025,Ventas,4.045,pendiente,Venta de producto comercial
+INV-2025-216,18-01-2025,Inventario,4.203,pendiente,Compra de stock
+INV-2025-217,31-08-2025,Ventas,3.858,activo,Venta de producto comercial
+INV-2025-218,13-05-2025,Ventas,2.270,pendiente,Venta de producto comercial
+INV-2025-219,07-11-2025,Ventas,3.539,pendiente,Venta de producto comercial
+INV-2025-220,06-03-2025,Inventario,4.787,pendiente,Compra de stock
+INV-2025-221,26-08-2025,Ventas,387,pendiente,Venta de producto comercial
+INV-2025-222,25-02-2025,Servicios,2.289,pendiente,Prestación de servicio
+INV-2025-223,25-01-2025,Gastos,4.273,pendiente,Pago de gasto operativo
+INV-2025-224,07-06-2025,Servicios,2.799,activo,Prestación de servicio
+INV-2025-225,21-01-2025,Servicios,1.753,completado,Prestación de servicio
+INV-2025-226,06-04-2025,Inventario,4.598,pendiente,Compra de stock
+INV-2025-227,26-09-2025,Servicios,400,completado,Prestación de servicio
+INV-2025-228,09-08-2025,Servicios,1.884,completado,Prestación de servicio
+INV-2025-229,06-06-2025,Gastos,1.459,pendiente,Pago de gasto operativo
+INV-2025-230,20-02-2025,Gastos,2.184,activo,Pago de gasto operativo
+INV-2025-231,10-09-2025,Ventas,1.728,pendiente,Venta de producto comercial
+INV-2025-232,08-02-2025,Inventario,4.159,completado,Compra de stock
+INV-2025-233,21-09-2025,Servicios,1.489,activo,Prestación de servicio
+INV-2025-234,24-08-2025,Gastos,199,completado,Pago de gasto operativo
+INV-2025-235,12-05-2025,Gastos,4.523,pendiente,Pago de gasto operativo
+INV-2025-236,20-07-2025,Ventas,648,pendiente,Venta de producto comercial
+INV-2025-237,11-11-2025,Inventario,3.904,pendiente,Compra de stock
+INV-2025-238,23-01-2025,Inventario,1.040,pendiente,Compra de stock
+INV-2025-239,09-11-2025,Servicios,3.007,pendiente,Prestación de servicio
+INV-2025-240,19-10-2025,Servicios,3.089,activo,Prestación de servicio
+INV-2025-241,20-03-2025,Gastos,3.935,pendiente,Pago de gasto operativo
+INV-2025-242,11-01-2025,Inventario,1.202,pendiente,Compra de stock
+INV-2025-243,01-10-2025,Inventario,2.453,activo,Compra de stock
+INV-2025-244,18-08-2025,Gastos,2.462,cancelado,Pago de gasto operativo
+INV-2025-245,24-06-2025,Servicios,2.364,pendiente,Prestación de servicio
+INV-2025-246,12-10-2025,Inventario,3.766,completado,Compra de stock
+INV-2025-247,26-05-2025,Servicios,2.268,completado,Prestación de servicio
+INV-2025-248,27-01-2025,Inventario,4.481,pendiente,Compra de stock
+INV-2025-249,13-03-2025,Ventas,2.051,activo,Venta de producto comercial
+INV-2025-250,10-02-2025,Gastos,2.421,pendiente,Pago de gasto operativo

@@ -554,19 +554,30 @@ const deleteRecord = async (id: number) => {
   }
 };
 
-const formatAmount = (amount: number) => {
-  // Si es un número entero, mostrar sin decimales
-  if (Number.isInteger(amount)) {
+const formatAmount = (amount: number | string) => {
+  // Convertir a número si es string
+  const numAmount = typeof amount === 'string' ? parseFloat(amount) : amount;
+  
+  if (isNaN(numAmount)) {
+    return '0';
+  }
+  
+  // Verificar si realmente es un entero (sin parte decimal significativa)
+  const isWholeNumber = numAmount % 1 === 0;
+  
+  if (isWholeNumber) {
+    // Si es entero, mostrar sin decimales pero con separador de miles
     return new Intl.NumberFormat('es-ES', {
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
-    }).format(amount);
+    }).format(numAmount);
   }
-  // Si tiene decimales, mostrar hasta 2 decimales
+  
+  // Si tiene decimales, mostrar siempre 2 decimales
   return new Intl.NumberFormat('es-ES', {
-    minimumFractionDigits: 0,
+    minimumFractionDigits: 2,
     maximumFractionDigits: 2,
-  }).format(amount);
+  }).format(numAmount);
 };
 
 const formatDate = (date: string | Date) => {

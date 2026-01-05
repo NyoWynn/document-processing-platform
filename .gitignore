@@ -35,7 +35,8 @@ backend/.env
 frontend/dist/
 frontend/.env.local
 
-# Data (except examples)
-data/raw.*
-data/normalized.*
+# Data (except examples and generated files)
+# Los archivos raw.json, raw.csv, normalized.json, normalized.csv se generan automáticamente
+# data/raw.*
+# data/normalized.*
 !data/data.pdf
