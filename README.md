@@ -124,12 +124,12 @@ El sistema está diseñado para resolver el problema común de **ingesta de dato
 ## 📸 Capturas de Pantalla
 
 ### Pantalla de Login
-![Login](./screenshots/login.png)
+![Login](https://cdn.discordapp.com/attachments/1424448965457477844/1457826356132970590/image.png?ex=696fdf18&is=696e8d98&hm=be934c8b70df0e896535ce852329c402b7081444fd58bfff99fc9a22a4e6e8fc&)
 
 Interfaz de autenticación con validación en tiempo real y manejo de errores.
 
 ### Panel de Registros
-![Panel de Registros](./screenshots/records.png)
+![Panel de Registros](https://cdn.discordapp.com/attachments/1424448965457477844/1457826475297476850/image.png?ex=696fdf34&is=696e8db4&hm=92e49f776957061b183a7eb2d0cd1400b6e5e794c91686653f0ba1635957ce31&)
 
 Vista principal con tabla interactiva, filtros, búsqueda y acciones CRUD.
 
