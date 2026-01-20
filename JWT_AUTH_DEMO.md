@@ -103,3 +103,5 @@ curl -X GET http://localhost:3000/records \
 
 La API REST está **completamente protegida con JWT**. Todos los endpoints (excepto `/auth/login`) requieren un token válido en el header `Authorization: Bearer <token>`.
 
+
+

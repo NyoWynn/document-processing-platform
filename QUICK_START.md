@@ -98,21 +98,7 @@ O usa el endpoint de registro si está disponible.
 3. **Login**: Inicia sesión con tus credenciales
 4. **Registros**: Deberías ver la tabla de registros (vacía si no has importado el PDF)
 
-## 🐛 Problemas Comunes
 
-### Error: "Cannot connect to database"
-- ✅ Verifica que MySQL esté corriendo en Laragon
-- ✅ Verifica las credenciales en `.env`
-
-### Error: "Port 3000 already in use"
-- ✅ Cambia el puerto en `backend/src/main.ts` o detén el proceso que usa el puerto
-
-### Error: "Port 5173 already in use"
-- ✅ Vite usará automáticamente el siguiente puerto disponible
-
-### No puedo iniciar sesión
-- ✅ Verifica que el usuario exista en la base de datos
-- ✅ Verifica que la contraseña sea correcta (está hasheada con bcrypt)
 
 ## 📝 Comandos Útiles
 
@@ -132,5 +118,7 @@ cd frontend && npm run build
 
 ---
 
-**¡Listo!** 🎉 Tu aplicación debería estar corriendo.
+
+
+
 

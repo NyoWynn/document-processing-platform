@@ -25,7 +25,7 @@ export interface NormalizedRecord {
 export class PdfExtractorService {
   async extractFromPdf(pdfBuffer: Buffer): Promise<RawRecord[]> {
     try {
-      // Importar pdf-parse
+      
       const pdfParseModule = require('pdf-parse');
       const PDFParse = pdfParseModule.PDFParse;
       
@@ -33,10 +33,10 @@ export class PdfExtractorService {
         throw new Error('PDFParse no está disponible');
       }
       
-      // Instanciar PDFParse
+     
       const pdfParser = new PDFParse({ data: pdfBuffer });
       
-      // Intentar obtener tabla primero (más preciso)
+      // Intentar obtener tabla 
       try {
         const tableData = await pdfParser.getTable();
         if (tableData && tableData.pages && tableData.pages.length > 0) {
@@ -46,13 +46,13 @@ export class PdfExtractorService {
           for (const page of tableData.pages) {
             if (page.tables && page.tables.length > 0) {
               for (const table of page.tables) {
-                // Mostrar la primera fila (headers) para debug
+                //  para debug
                 if (table.length > 0) {
                   console.log('Headers de la tabla:', table[0]);
                 }
                 
-                // Identificar índices de columnas basándose en el contenido
-                // Buscar en las primeras filas para identificar el orden
+            
+                // Buscar en las primeras filas para  orden
                 let sourceIdCol = -1;
                 let dateCol = -1;
                 let categoryCol = -1;
@@ -60,7 +60,7 @@ export class PdfExtractorService {
                 let statusCol = -1;
                 let descriptionCol = -1;
                 
-                // Buscar en las primeras 3 filas para identificar las columnas
+                // primeras 3 filas para identificar las columnas
                 for (let sampleRow = 0; sampleRow < Math.min(3, table.length); sampleRow++) {
                   const row = table[sampleRow];
                   if (!row || row.length < 6) continue;
@@ -68,31 +68,30 @@ export class PdfExtractorService {
                   for (let col = 0; col < row.length; col++) {
                     const cell = (row[col] || '').toString().trim();
                     
-                    // Identificar Source ID
+                    //Source ID
                     if (sourceIdCol === -1 && /^INV-\d{4}-\d{3}$/i.test(cell)) {
                       sourceIdCol = col;
                       console.log(`Source ID encontrado en columna ${col}: "${cell}"`);
                     }
                     
-                    // Identificar Fecha (DD-MM-YYYY o DD/MM/YYYY)
                     if (dateCol === -1 && /^\d{1,2}[-\/]\d{1,2}[-\/]\d{4}$/.test(cell)) {
                       dateCol = col;
                       console.log(`Fecha encontrada en columna ${col}: "${cell}"`);
                     }
                     
-                    // Identificar Categoría
+                 
                     if (categoryCol === -1 && /^(Servicios|Inventario|Gastos|Ventas)$/i.test(cell)) {
                       categoryCol = col;
                       console.log(`Categoría encontrada en columna ${col}: "${cell}"`);
                     }
                     
-                    // Identificar Monto ($ seguido de números)
+                    // Identificar Monto
                     if (amountCol === -1 && /\$[\d.,]+/.test(cell)) {
                       amountCol = col;
                       console.log(`Monto encontrado en columna ${col}: "${cell}"`);
                     }
                     
-                    // Identificar Estado
+                    //  Estado
                     if (statusCol === -1 && /^(activo|pendiente|completado|cancelado)$/i.test(cell)) {
                       statusCol = col;
                       console.log(`Estado encontrado en columna ${col}: "${cell}"`);
@@ -100,14 +99,14 @@ export class PdfExtractorService {
                   }
                 }
                 
-                // Si no encontramos todas las columnas, usar la última columna como descripción
+                // Si no encontramos todas las columnas
                 if (descriptionCol === -1) {
-                  // Buscar la columna más larga que no sea ninguna de las anteriores
+                 
                   for (let col = 0; col < (table[1]?.length || 0); col++) {
                     if (col !== sourceIdCol && col !== dateCol && col !== categoryCol && 
                         col !== amountCol && col !== statusCol) {
                       const cell = (table[1]?.[col] || '').toString().trim();
-                      if (cell.length > 20) { // Descripción suele ser más larga
+                      if (cell.length > 20) { 
                         descriptionCol = col;
                         break;
                       }
@@ -125,7 +124,7 @@ export class PdfExtractorService {
                 console.log(`Total de filas en la tabla: ${table.length} (incluyendo headers)`);
                 console.log(`Procesando filas desde índice 1 hasta ${table.length - 1}`);
                 
-                // Mostrar las primeras 10 filas completas para debug
+                // 10 filas completas para debug
                 console.log('=== PRIMERAS 10 FILAS DE LA TABLA ===');
                 for (let debugRow = 0; debugRow < Math.min(10, table.length); debugRow++) {
                   const debugRowData = table[debugRow];
@@ -148,7 +147,7 @@ export class PdfExtractorService {
                     continue;
                   }
                   
-                  // Extraer datos de las columnas identificadas
+                  //  datos de las columnas identificadas
                   const sourceId = sourceIdCol >= 0 ? (row[sourceIdCol] || '').toString().trim() : '';
                   let date = dateCol >= 0 ? (row[dateCol] || '').toString().trim() : '';
                   const category = categoryCol >= 0 ? (row[categoryCol] || '').toString().trim() : '';
@@ -156,12 +155,12 @@ export class PdfExtractorService {
                   const status = statusCol >= 0 ? (row[statusCol] || '').toString().trim() : '';
                   const description = descriptionCol >= 0 ? (row[descriptionCol] || '').toString().trim() : '';
                   
-                  // Log de las primeras 10 filas para debug
+                  // Log de las primeras 10 filas
                   if (i <= 10) {
                     console.log(`Fila ${i} extraída: SourceID="${sourceId}", Date="${date}", Category="${category}", Amount="${amount}", Status="${status}"`);
                   }
                   
-                  // Validar que tenemos los campos mínimos
+                 
                   if (!sourceId || !date || !category) {
                     skippedCount++;
                     if (i <= 10) {
@@ -173,24 +172,24 @@ export class PdfExtractorService {
                   // Guardar fecha original para logs
                   const dateOriginal = date;
                   
-                  // Limpiar fecha: remover espacios extra pero mantener guiones
+                  // Limpiar fecha
                   date = date.replace(/\s+/g, '').replace(/[^\d-\/]/g, '');
                   
-                  // Normalizar fecha: convertir DD/MM/YYYY a DD-MM-YYYY
+                  // Normalizar 
                   if (date.includes('/')) {
                     date = date.replace(/\//g, '-');
                   }
                   
-                  // Si la fecha tiene formato incorrecto, intentar corregirla
+                
                   if (date && !date.match(/^\d{1,2}-\d{1,2}-\d{4}$/)) {
-                    // Intentar convertir otros formatos
+                 
                     const dateParts = date.split(/[-\s\/]/).filter(p => p);
                     if (dateParts.length === 3) {
                       date = `${dateParts[0]}-${dateParts[1]}-${dateParts[2]}`;
                     }
                   }
                   
-                  // Log con Source ID y fecha
+                  // Log 
                   console.log(`[${sourceId}] Fecha original: "${dateOriginal}" -> Fecha normalizada: "${date}"`);
                   
                   // Limpiar monto: remover $ y espacios
@@ -222,7 +221,7 @@ export class PdfExtractorService {
           
           if (records.length > 0) {
             console.log(`Extraídos ${records.length} registros de la tabla`);
-            // Mostrar los primeros 5 y últimos 5 Source IDs para verificar
+           
             const firstFive = records.slice(0, 5).map(r => r.sourceId);
             const lastFive = records.slice(-5).map(r => r.sourceId);
             console.log(`Primeros 5 Source IDs extraídos: ${firstFive.join(', ')}`);
@@ -231,7 +230,7 @@ export class PdfExtractorService {
           }
         }
       } catch (tableError) {
-        // Si falla getTable, usar getText como fallback
+    
         console.log('getTable falló, usando getText como fallback:', tableError);
       }
       
@@ -252,9 +251,9 @@ export class PdfExtractorService {
     // Patrón para detectar filas de tabla: Source ID | Fecha | Categoría | Monto | Estado | Descripción
     // Formato esperado: INV-2025-XXX | DD-MM-YYYY | Categoría | $X.XXX | estado | descripción
     const sourceIdPattern = /(INV-\d{4}-\d{3})/i;
-    // Patrón más específico para fecha DD-MM-YYYY (debe tener guiones y 4 dígitos en el año)
+ 
     const datePattern = /\b(\d{1,2})-(\d{1,2})-(\d{4})\b/; // DD-MM-YYYY con word boundaries
-    const amountPattern = /\$([\d.]+)/; // $X.XXX o $X,XXX
+    const amountPattern = /\$([\d.]+)/; 
     const categoryPattern = /(Servicios|Inventario|Gastos|Ventas)/i;
     const statusPattern = /\b(activo|pendiente|completado|cancelado)\b/i;
     
@@ -268,7 +267,7 @@ export class PdfExtractorService {
       const sourceId = sourceIdMatch[1];
       const record: RawRecord = { sourceId };
       
-      // Buscar fecha (DD-MM-YYYY) - usar match con grupos para capturar correctamente
+      // Buscar fecha (DD-MM-YYYY) 
       const dateMatch = line.match(datePattern);
       if (dateMatch) {
         // Reconstruir la fecha en formato DD-MM-YYYY
@@ -284,7 +283,7 @@ export class PdfExtractorService {
         record.category = categoryMatch[1];
       }
       
-      // Buscar monto ($X.XXX)
+      // Buscar monto 
       const amountMatch = line.match(amountPattern);
       if (amountMatch) {
         record.amount = amountMatch[1];
@@ -296,12 +295,12 @@ export class PdfExtractorService {
         record.status = statusMatch[1].toLowerCase();
       }
       
-      // Buscar descripción (texto después del estado)
+      // Buscar descripción 
       const statusIndex = line.toLowerCase().indexOf(record.status || '');
       if (statusIndex !== -1) {
         const descriptionStart = statusIndex + (record.status?.length || 0);
         const descriptionText = line.substring(descriptionStart).trim();
-        // Limpiar la descripción (remover pipes, espacios extra, etc.)
+        // Limpiar la descripción 
         const cleanDescription = descriptionText
           .replace(/\|/g, '')
           .replace(/\s+/g, ' ')
@@ -325,7 +324,7 @@ export class PdfExtractorService {
       // Normalizar sourceId
       const sourceId = raw.sourceId || `PDF-${index + 1}`;
       
-      // Normalizar fecha - agregar log para debug con Source ID
+      // Normalizar fecha 
       console.log(`[${sourceId}] Normalizando fecha: "${raw.date}" -> `);
       let normalizedDate = this.normalizeDate(raw.date, sourceId);
       console.log(`[${sourceId}] Fecha normalizada: "${normalizedDate}"`);
@@ -359,11 +358,10 @@ export class PdfExtractorService {
     }
     
     console.log(`${sourceIdPrefix}normalizeDate: entrada original: "${dateStr}"`);
-    
-    // Limpiar la cadena de fecha: remover espacios, pero mantener guiones y números
+  
     let cleaned = dateStr.trim();
     
-    // Remover espacios entre números y guiones (ej: "11 - 10 - 2025" -> "11-10-2025")
+    // Remover espacios entre números y guiones 
     cleaned = cleaned.replace(/\s*-\s*/g, '-');
     cleaned = cleaned.replace(/\s+/g, '');
     
@@ -372,7 +370,7 @@ export class PdfExtractorService {
     
     console.log(`${sourceIdPrefix}normalizeDate: después de limpieza: "${cleaned}"`);
     
-    // El PDF usa formato DD-MM-YYYY (ej: 11-10-2025)
+    // El PDF usa formato DD-MM-YYYY (
     // Intentar diferentes patrones
     const patterns = [
       /^(\d{1,2})-(\d{1,2})-(\d{4})$/,  // DD-MM-YYYY
@@ -396,10 +394,10 @@ export class PdfExtractorService {
         // Validar que sean números válidos y estén en rangos correctos
         if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
           if (day >= 1 && day <= 31 && month >= 1 && month <= 12 && year >= 1900 && year <= 2100) {
-            // Crear fecha para validar (mes - 1 porque Date usa 0-11)
+         
             const testDate = new Date(year, month - 1, day);
             
-            // Verificar que la fecha es válida (evita fechas como 31-02-2025)
+            // Verificar que la fecha es válida 
             if (testDate.getFullYear() === year && 
                 testDate.getMonth() === month - 1 && 
                 testDate.getDate() === day) {
@@ -423,8 +421,8 @@ export class PdfExtractorService {
     
     // Intentar otros formatos como fallback
     const formats = [
-      /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/, // DD/MM/YYYY
-      /^(\d{4})\-(\d{1,2})\-(\d{1,2})$/, // YYYY-MM-DD
+      /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/, 
+      /^(\d{4})\-(\d{1,2})\-(\d{1,2})$/, 
     ];
     
     for (let i = 0; i < formats.length; i++) {
@@ -480,7 +478,7 @@ export class PdfExtractorService {
     // Si tiene punto, verificar si es separador de miles o decimal
     if (cleaned.includes('.')) {
       const parts = cleaned.split('.');
-      // Si tiene más de 2 partes o la última parte tiene más de 2 dígitos, es separador de miles
+     
       if (parts.length > 2 || (parts.length === 2 && parts[1].length > 2)) {
         // Es separador de miles, remover todos los puntos
         cleaned = cleaned.replace(/\./g, '');
@@ -489,8 +487,7 @@ export class PdfExtractorService {
         cleaned = cleaned.replace(/\./g, '.');
       }
     }
-    
-    // Remover comas (por si acaso)
+ 
     cleaned = cleaned.replace(/,/g, '');
     
     // Convertir a número
@@ -504,7 +501,7 @@ export class PdfExtractorService {
       return 'Sin categoría';
     }
     
-    // Normalizar a título (primera letra mayúscula)
+  
     return category
       .toLowerCase()
       .split(' ')

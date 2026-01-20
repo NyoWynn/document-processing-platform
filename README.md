@@ -1,95 +1,412 @@
-# Prueba Técnica -
+# Document Processing & Analytics Platform
 
-## 📸 Screenshots de la Aplicación
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=flat&logo=github)](https://github.com/NyoWynn/document-processing-platform)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=flat&logo=nestjs&logoColor=white)](https://nestjs.com/)
+[![Vue.js](https://img.shields.io/badge/Vue.js-35495E?style=flat&logo=vue.js&logoColor=4FC08D)](https://vuejs.org/)
+[![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![PowerBI](https://img.shields.io/badge/PowerBI-F2C811?style=flat&logo=power-bi&logoColor=black)](https://powerbi.microsoft.com/)
 
-### Pantalla de Login
-![Login](https://cdn.discordapp.com/attachments/1424448965457477844/1457826356132970590/image.png?ex=695d6a18&is=695c1898&hm=766c0cd4e3cb2c6e4b8bd7c5b6986a4201e9381cf9defb308d1b2e2a66b6288b)
+## 📋 Descripción del Proyecto
 
-### Panel de Registros
-![Panel de Registros](https://cdn.discordapp.com/attachments/1424448965457477844/1457826475297476850/image.png?ex=695d6a34&is=695c18b4&hm=d512a6de5a4461fa4b7b7ecdeaf9d1b06ccc7fdf56897e6fa2858b35cab91e68)
+**Document Processing & Analytics Platform** es una solución integral de **ETL (Extract, Transform, Load)** diseñada para procesar documentos PDF, extraer información estructurada y transformarla en datos analizables. El sistema incluye una API REST robusta con autenticación JWT, una interfaz web moderna y responsiva, y un dashboard de Business Intelligence para análisis avanzados.
 
----
+Este proyecto demuestra competencias en arquitectura de software full-stack, procesamiento de documentos, gestión de bases de datos relacionales, autenticación y autorización, integración con herramientas de BI, y desarrollo de interfaces de usuario modernas.
 
-## 📋 Descripción del Desafío
+### 🎯 Objetivos del Sistema
 
-Este repositorio contiene un proyecto base para implementar un **pipeline completo de ingesta de datos** desde un PDF hacia una base de datos MySQL, con una API REST en NestJS y una interfaz web en Vue 3 + Vuetify 3, terminando de mostrar los datos en un PowerBI con una conexión directa desde la base de datos.
+El sistema está diseñado para resolver el problema común de **ingesta de datos desde documentos no estructurados** (PDFs) hacia sistemas de almacenamiento estructurados (bases de datos relacionales), permitiendo:
 
-### Objetivo Principal
+- ✅ **Extracción automatizada** de datos desde documentos PDF
+- ✅ **Normalización y validación** de datos extraídos
+- ✅ **Carga idempotente** en base de datos MySQL
+- ✅ **API REST segura** con autenticación basada en tokens JWT
+- ✅ **Interfaz web intuitiva** para gestión y visualización de datos
+- ✅ **Dashboard de BI** para análisis y reportes avanzados
 
-El candidato debe implementar un sistema que:
-1. **Extraiga** datos estructurados desde un archivo PDF (`/data/data.pdf`)
-2. **Normalice** los datos extraídos hacia un formato estándar
-3. **Cargue** los datos normalizados en MySQL de forma idempotente
-4. **Exponga** una API REST con autenticación JWT
-5. **Muestre** los datos en una interfaz web con Vue 3 + Vuetify 3
-6. **Cree** un dashboard en PowerBI
-
-## 🏗️ Estructura del Proyecto
+## 🏗️ Arquitectura del Sistema
 
 ```
-practica_test/
-├── backend/          # API NestJS - Debes crear el proyecto desde cero
-├── frontend/         # App Vue 3 + Vuetify 3 - Debes crear el proyecto desde cero
-├── data/             # Dataset PDF y documentación
+┌─────────────────┐
+│   PDF Document  │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────────────────────────┐
+│      Backend API (NestJS)           │
+│  ┌───────────────────────────────┐  │
+│  │  PDF Processing Service       │  │
+│  │  - Extract                    │  │
+│  │  - Transform/Normalize        │  │
+│  │  - Validate                   │  │
+│  └───────────────────────────────┘  │
+│  ┌───────────────────────────────┐  │
+│  │  REST API                     │  │
+│  │  - Authentication (JWT)       │  │
+│  │  - CRUD Operations            │  │
+│  │  - File Upload                │  │
+│  └───────────────────────────────┘  │
+└────────┬────────────────────────────┘
+         │
+         ▼
+┌─────────────────┐
+│   MySQL DB      │
+│  - Records      │
+│  - Users        │
+└────────┬────────┘
+         │
+    ┌────┴────┐
+    │         │
+    ▼         ▼
+┌─────────┐ ┌─────────────────┐
+│ Frontend│ │  PowerBI        │
+│ (Vue 3) │ │  Dashboard      │
+└─────────┘ └─────────────────┘
 ```
 
-## 🚀 Inicio Rápido
+## ✨ Características Principales
 
-### Prerrequisitos
-- **Laragon** instalado y funcionando (incluye Node.js y MySQL)
-- Node.js (viene con Laragon)
-- MySQL (viene con Laragon)
-- pnpm o npm
+### 🔐 Autenticación y Seguridad
+- Autenticación JWT (JSON Web Tokens)
+- Guards de protección de rutas
+- Encriptación de contraseñas con bcrypt
+- Validación de datos en entrada y salida
+- CORS configurado para seguridad
 
-### Pasos Generales
+### 📄 Procesamiento de Documentos
+- Extracción de datos estructurados desde PDFs
+- Normalización automática de datos
+- Validación de formato y tipos de datos
+- Procesamiento idempotente (previene duplicados)
 
-1. **Revisa cada carpeta**: Cada carpeta (`/backend`, `/frontend`, `/data`) tiene su propio README con instrucciones específicas.
+### 🗄️ Gestión de Datos
+- API REST completa (CRUD)
+- Operaciones idempotentes para ingesta de datos
+- Relaciones y constraints en base de datos
+- Migraciones con TypeORM
 
-2. **Empieza por el backend**: Sigue las instrucciones en `/backend/README.md`
+### 🎨 Interfaz de Usuario
+- Diseño responsivo con Vuetify 3
+- Gestión de estado con Pinia
+- Tablas interactivas con filtros y paginación
+- Formularios validados
+- Navegación con Vue Router
 
-3. **Luego el frontend**: Sigue las instrucciones en `/frontend/README.md`
-
-4. **Usa los datos de ejemplo**: Revisa `/data/README.md` para entender la estructura esperada
-
-5. **Crea el dashboard PowerBI**: Crear visualizaciones
-
-## 📊 PowerBI Dashboard
-
-Como parte final del proyecto, debes crear un dashboard en PowerBI Desktop que:
-
-1. **Conecte directamente a MySQL** usando el conector nativo de MySQL
-2. **Importe los datos** de la tabla `records`
-3. **Crea visualizaciones** como:
-   - Gráfico de montos por categoría
-   - Tabla de registros con filtros
-   - Gráfico de tendencias por fecha
-   - Métricas agregadas (total, promedio, etc.)
-
-
-## 📚 Documentación
-
-- **[Backend README](./backend/README.md)** - Instrucciones para crear la API NestJS
-- **[Frontend README](./frontend/README.md)** - Instrucciones para crear la app Vue 3 + Vuetify 3
-- **[Data README](./data/README.md)** - Información sobre el PDF y estructura de datos
-
-## ✅ Qué Entregar
-
-1. **Repositorio Git** con git commit de todo el código realizado hasta las 17hrs del 06-01-2026
-2. **Dashboard PowerBI** con visualizaciones de los datos
+### 📊 Business Intelligence
+- Dashboard interactivo en PowerBI
+- Conexión directa a MySQL
+- Visualizaciones avanzadas (gráficos, tablas, métricas)
+- Análisis de tendencias y agregaciones
 
 ## 🛠️ Stack Tecnológico
 
-- **Backend**: NestJS, TypeScript, MySQL, JWT
-- **Frontend**: Vue 3, Vuetify 3, Pinia, Axios
-- **Base de Datos**: MySQL
-- **BI**: PowerBI Desktop
+### Backend
+- **Framework**: NestJS 11 (TypeScript)
+- **Base de Datos**: MySQL con TypeORM
+- **Autenticación**: JWT con Passport.js
+- **Validación**: class-validator, class-transformer
+- **PDF Processing**: pdf-parse
+- **Seguridad**: bcryptjs
 
-## 📞 Notas Importantes
+### Frontend
+- **Framework**: Vue 3 (Composition API)
+- **UI Library**: Vuetify 3
+- **Estado**: Pinia
+- **Ruteo**: Vue Router 4
+- **HTTP Client**: Axios
+- **Build Tool**: Vite
 
-- **NO** hay código base implementado. Debes crear todo desde cero siguiendo los READMEs.
-- Cada carpeta tiene instrucciones específicas sobre qué implementar.
-- Usa Laragon para gestionar MySQL y Node.js.
+### Base de Datos y BI
+- **Base de Datos**: MySQL 8+
+- **ORM**: TypeORM
+- **BI Tool**: PowerBI Desktop
+
+## 📸 Capturas de Pantalla
+
+### Pantalla de Login
+![Login](./screenshots/login.png)
+
+Interfaz de autenticación con validación en tiempo real y manejo de errores.
+
+### Panel de Registros
+![Panel de Registros](./screenshots/records.png)
+
+Vista principal con tabla interactiva, filtros, búsqueda y acciones CRUD.
+
+## 🚀 Instalación y Configuración
+
+### Prerrequisitos
+
+Asegúrate de tener instalado:
+
+- **Node.js** (v18 o superior)
+- **MySQL** (v8.0 o superior) o **Laragon** (recomendado para Windows)
+- **pnpm** o **npm**
+- **PowerBI Desktop** (opcional, para visualización)
+
+### 1. Clonar el Repositorio
+
+```bash
+git clone https://github.com/NyoWynn/document-processing-platform.git
+cd document-processing-platform
+```
+
+### 2. Configurar Base de Datos
+
+Crea una base de datos MySQL:
+
+```sql
+CREATE DATABASE document_processing CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+
+O usa Laragon para crear la base de datos desde la interfaz gráfica.
+
+### 3. Configurar Backend
+
+```bash
+cd backend
+npm install
+
+# Configurar variables de entorno
+# Crea un archivo .env en la carpeta backend con:
+```
+
+```env
+DB_HOST=localhost
+DB_PORT=3306
+DB_USERNAME=root
+DB_PASSWORD=tu_password
+DB_DATABASE=document_processing
+JWT_SECRET=tu_secret_jwt_muy_seguro
+JWT_EXPIRES_IN=24h
+PORT=3000
+FRONTEND_URL=http://localhost:5173
+```
+
+```bash
+# Iniciar el servidor en modo desarrollo
+npm run start:dev
+```
+
+El backend estará disponible en `http://localhost:3000`
+
+### 4. Configurar Frontend
+
+```bash
+cd frontend
+npm install
+
+# Configurar variables de entorno (opcional)
+# Crea un archivo .env en la carpeta frontend:
+```
+
+```env
+VITE_API_URL=http://localhost:3000
+```
+
+```bash
+# Iniciar el servidor de desarrollo
+npm run dev
+```
+
+El frontend estará disponible en `http://localhost:5173`
+
+### 5. Crear Usuario Inicial
+
+Para crear un usuario administrador, puedes usar el endpoint de registro o ejecutar un script SQL:
+
+```sql
+INSERT INTO users (email, password, createdAt, updatedAt) 
+VALUES (
+  'admin@example.com',
+  '$2a$10$TuHashBcryptGenerado',
+  NOW(),
+  NOW()
+);
+```
+
+> **Nota**: El hash de la contraseña debe generarse usando bcrypt. Usa la API de autenticación o un script Node.js para generar el hash.
+
+## 📖 Uso del Sistema
+
+### 1. Autenticación
+
+1. Accede a `http://localhost:5173/login`
+2. Ingresa tus credenciales (email y contraseña)
+3. El sistema redirigirá automáticamente al panel de registros
+
+### 2. Ingesta de Datos desde PDF
+
+1. Ve a la sección de Records
+2. Usa el endpoint `/api/records/ingest` para subir un PDF
+3. El sistema procesará el PDF, extraerá los datos y los cargará en la base de datos
+
+**Ejemplo con cURL:**
+
+```bash
+curl -X POST http://localhost:3000/records/ingest \
+  -H "Authorization: Bearer TU_TOKEN_JWT" \
+  -F "file=@/ruta/a/tu/archivo.pdf"
+```
+
+### 3. Gestión de Registros
+
+Desde la interfaz web puedes:
+- Ver todos los registros en una tabla paginada
+- Filtrar y buscar registros
+- Crear nuevos registros manualmente
+- Editar registros existentes
+- Eliminar registros
+
+### 4. Dashboard PowerBI
+
+1. Abre PowerBI Desktop
+2. Selecciona "Obtener datos" → "Base de datos" → "Base de datos de MySQL"
+3. Ingresa las credenciales de conexión:
+   - Servidor: `localhost`
+   - Base de datos: `document_processing`
+4. Selecciona la tabla `records`
+5. Crea visualizaciones personalizadas según tus necesidades
+
+## 📁 Estructura del Proyecto
+
+```
+document-processing-platform/
+├── backend/                 # API NestJS
+│   ├── src/
+│   │   ├── auth/           # Módulo de autenticación JWT
+│   │   ├── records/        # Módulo de registros (CRUD + ingesta)
+│   │   ├── users/          # Módulo de usuarios
+│   │   ├── entities/       # Entidades TypeORM
+│   │   ├── config/         # Configuración (DB, etc.)
+│   │   └── services/       # Servicios compartidos
+│   ├── data/               # Datos procesados (raw y normalized)
+│   └── package.json
+│
+├── frontend/               # Aplicación Vue 3
+│   ├── src/
+│   │   ├── views/          # Vistas (Login, Records)
+│   │   ├── components/     # Componentes reutilizables
+│   │   ├── stores/         # Stores Pinia (auth, records)
+│   │   ├── services/       # Cliente API Axios
+│   │   └── router/         # Configuración de rutas
+│   └── package.json
+│
+├── data/                   # Datos de ejemplo
+│   ├── data.pdf            # PDF de prueba
+│   └── README.md           # Documentación de datos
+│
+├── POWERBI/                # Dashboard PowerBI
+│   ├── BIdata.pbix         # Archivo de PowerBI Desktop
+│   └── graficospdf.pdf     # Documentación de visualizaciones
+│
+└── README.md               # Este archivo
+```
+
+## 🔌 Endpoints de la API
+
+### Autenticación
+- `POST /auth/login` - Iniciar sesión (público)
+
+### Registros (requieren autenticación JWT)
+- `GET /records` - Obtener todos los registros
+- `GET /records/:id` - Obtener un registro por ID
+- `POST /records` - Crear un nuevo registro
+- `POST /records/ingest` - Ingesta desde PDF (multipart/form-data)
+- `PATCH /records/:id` - Actualizar un registro
+- `DELETE /records/:id` - Eliminar un registro
+
+### Ejemplo de Uso de la API
+
+```bash
+# Login
+curl -X POST http://localhost:3000/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"admin@example.com","password":"tu_password"}'
+
+# Obtener registros (con token)
+curl -X GET http://localhost:3000/records \
+  -H "Authorization: Bearer TU_TOKEN_JWT"
+```
+
+## 🧪 Testing
+
+### Backend
+```bash
+cd backend
+npm run test           # Unit tests
+npm run test:e2e       # E2E tests
+npm run test:cov       # Coverage
+```
+
+### Frontend
+```bash
+cd frontend
+npm run test:unit      # Unit tests
+npm run test:e2e       # E2E tests con Playwright
+```
+
+## 📚 Documentación Adicional
+
+- **[Backend README](./backend/README.md)** - Guía detallada del backend
+- **[Frontend README](./frontend/README.md)** - Guía detallada del frontend
+- **[Data README](./data/README.md)** - Información sobre estructura de datos
+- **[JWT Auth Demo](./JWT_AUTH_DEMO.md)** - Demostración de autenticación
+- **[Quick Start Guide](./QUICK_START.md)** - Guía de inicio rápido
+
+## 🎯 Casos de Uso
+
+Este proyecto es ideal para:
+
+- **Portafolio profesional**: Demuestra competencias full-stack completas
+- **Sistemas de gestión documental**: Procesamiento automatizado de facturas, recibos, etc.
+- **ETL empresarial**: Pipeline de ingesta de datos desde documentos
+- **Business Intelligence**: Base para análisis y reportes empresariales
+- **Aprendizaje**: Ejemplo práctico de arquitectura moderna full-stack
+
+## 🔄 Mejoras Futuras
+
+- [ ] Soporte para múltiples formatos de documentos (Excel, CSV, JSON)
+- [ ] Procesamiento asíncrono con colas (Bull/BullMQ)
+- [ ] Exportación de datos a múltiples formatos
+- [ ] Sistema de logs y auditoría
+- [ ] Caché con Redis
+- [ ] Tests unitarios y de integración completos
+- [ ] Dockerización del proyecto
+- [ ] CI/CD pipeline
+- [ ] Documentación con Swagger/OpenAPI
+
+## 📝 Licencia
+
+Este proyecto es parte de un portafolio personal y está disponible para fines educativos y de demostración.
+
+## 👨‍💻 Autor
+
+Desarrollado como parte de un portafolio profesional demostrando competencias en desarrollo full-stack moderno.
 
 ---
 
-**¡Buena suerte!🚀**
+## 🚀 Inicio Rápido (TL;DR)
+
+```bash
+# 1. Clonar y entrar al proyecto
+git clone https://github.com/NyoWynn/document-processing-platform.git
+cd document-processing-platform
+
+# 2. Configurar backend
+cd backend && npm install
+# Configurar .env con credenciales de MySQL
+npm run start:dev
+
+# 3. Configurar frontend (en otra terminal)
+cd frontend && npm install
+npm run dev
+
+# 4. Acceder a la aplicación
+# Frontend: http://localhost:5173
+# Backend: http://localhost:3000
+```
+
+---
+
+**⭐ Si este proyecto te resulta útil, considera darle una estrella en GitHub!**
